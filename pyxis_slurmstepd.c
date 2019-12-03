@@ -174,6 +174,7 @@ static int spank_option_image(int val, const char *optarg, int remote)
 		return (-1);
 	}
 
+	slurm_info("About to check ... PATH_MAX=%d", PATH_MAX);
 	if (strnlen(optarg, PATH_MAX) >= PATH_MAX) {
 		slurm_error("pyxis: value for --container-image must be fewer than %d characters long", PATH_MAX);
 		return (-1);
